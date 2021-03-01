@@ -1,0 +1,363 @@
+/** 기본 설정 재설정 */
+* {
+  margin  : 0;
+  padding : 0;
+  -webkit-box-sizing : border-box;
+  -moz-box-sizing    : border-box;
+  box-sizing         : border-box;
+}
+h1,h2,h3,h4,h5,h6,p { margin-bottom : 10px; }
+ol,ul,dl { list-style-position : inside;}
+/** 재설정 끝 */
+
+@media (orientation: portrait) {
+  .izcamera-base {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: black;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .izcamera-body {
+    top: 10%;
+    left: 0%;
+    width: 100%;
+    height: 70%;
+    position: absolute;
+  }
+  .izcamera-footer-camera-downside-button-capture {
+    /* margin-top:-6vh; */
+    /* margin-left:-6vh; */
+    width: 10vh;
+    height: 10vh;
+  }
+}
+
+@media (orientation: landscape) {
+  .izcamera-base {
+    transform: rotate( -90deg );
+    transform-origin: top left;
+    position: absolute;
+    top: 100vh;
+    top: calc(var(--vh, 1vh) * 100);
+    left: 0px;
+    width: 100vh;
+    width: calc(var(--vh, 1vh) * 100);
+    height: 100vw;
+    background-color: black;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .izcamera-body {
+    transform: rotate( 90deg );
+    transform-origin: top left;
+    position: absolute;    
+    width: 70vw;
+    height: calc(var(--vh, 1vh) * 100);
+    top: 10vw;
+    left: calc(var(--vh, 1vh) * 100);
+    width: 70vw;
+    height: calc(var(--vh, 1vh) * 100);
+    top: 10vw;
+    left: calc(var(--vh, 1vh) * 100);
+    z-index: 1;
+  }
+  .izcamera-footer-camera-downside-button-capture {
+    /* margin-top:-6vh; */
+    /* margin-left:-6vh; */
+    width: 10vw;
+    height: 10vw;
+  }
+}
+
+.izcamera-header {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 10%;
+}
+
+.izcamera-header-text {
+  top: 30%;
+  position: relative;
+}
+
+.izcamera-footer {
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 20%;
+  position: absolute;
+}
+
+.izcamera-footer-camera {
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.izcamera-footer-camera-upside {
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 30%;
+  float: none;
+  position: relative;
+  text-align: center;
+}
+
+.izcamera-footer-camera-upside-select {
+  height:30px;
+  border:none;
+  border-radius:0;
+  background-color: transparent;
+  font-size: 30px;
+  color: white;
+  top: 10%;
+  position: relative;
+}
+
+.izcamera-footer-camera-downside {
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 70%;
+  float: none;
+  position: relative;
+  text-align: center;
+}
+
+.izcamera-header {
+  position: absolute;
+
+  background-color: #2c2c2c;
+  color: white;
+  text-align: center;
+  font-size:small;
+}
+
+.izcamera-body {
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8)
+}
+
+.izcamera-footer {
+  background-color: #2c2c2c;
+}
+
+.izcamera-footer-camera-upside {
+  /* background-color: #ececec; */
+}
+
+.izcamera-footer-camera-downside {
+  text-align: center;
+}
+.izcamera-body-camera {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.izcamera-body-camera-canvas {
+  position: absolute;
+  z-index: 1;
+}
+
+.izcamera-body-camera-video {
+  /* display: none; */
+  position: absolute
+}
+
+.izcamera-footer-camera-downside-button-capture {
+  position: relative;
+
+  background-color: #426ccd;
+  /* background: linear-gradient(145deg, #138D75, #45B39D); */
+  box-shadow: -10px -10px 20px #181818, 10px 10px 20px #404040;
+  border: none;
+  color: blue;
+  
+  border-radius: 50%;
+}
+
+.izcamera-footer-camera-downside-button-capture:focus {
+  outline: none;
+}
+
+.izcamera-footer-camera-downside-button-crop {
+  border: none;
+  background-color: transparent;
+  padding-left: 12px;
+}
+
+.izcamera-footer-camera-downside-button-crop:focus {
+  outline: none;
+}
+
+/**
+ * PREVIEW 화면 CSS 
+ */
+
+#izcamera-base-preview .izcamera-header {
+  font-size: 1rem;
+}
+
+.izcamera-body-preview {
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.izcamera-body-preview-img {
+  left: 0px;
+  right: 0px;
+}
+
+.izcamera-footer-preview {
+  left: 0px;
+  bottom: 0px;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  display: inline-table;
+}
+
+/** Reset default button style */
+button.button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentcolor;
+  }
+}
+
+button.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+
+  background-color: #426ccd;
+  color: white;
+  /* border-radius: 8px; */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+
+  padding: 0.25em 0.75em;
+  min-height: 4em;
+
+  text-align: center;
+  line-height: 1.1;
+
+  transition: 220ms all ease-in-out;
+}
+
+.izcamera-footer-preview-button-ok {
+  width: 50%;
+  height: auto;
+  min-height: 4em;
+}
+
+.izcamera-footer-preview-button-cancel {
+  width: 50%;
+  height: auto;
+  min-height: 4em;
+}
+
+.div-center {
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+/**
+ * EDITOR 화면 CSS 
+ */
+ 
+.izcamera-body-editor {
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.izcamera-body-editor-canvas-layer {
+  z-index: 2;
+  position: absolute;
+}
+
+.izcamera-body-editor-canvas-result {
+  z-index: 1;
+  position: absolute;
+  display: none;
+}
+
+.izcamera-body-editor-layer {
+  z-index: 1;
+  position: absolute;
+}
+
+.izcamera-body-editor-img {
+  left: 0px;
+  right: 0px;
+  position: absolute;
+}
+
+.izcamera-footer-editor {
+  left: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.izcamera-footer-editor-upside {
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: auto;
+  float: none;
+  position: absolute;
+  text-align: center;
+}
+
+.izcamera-footer-editor-downside {
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: auto;
+  float: none;
+  position: absolute;  
+}
+
+.izcamera-footer-editor-downside-button-left {
+  left: 0px;
+  bottom: 0px;
+  width: 50%;
+  height: 4em;
+  position: absolute;
+}
+
+.izcamera-footer-editor-downside-button-right {
+  right: 0px;
+  bottom: 0px;
+  width: 50%;
+  height: 4em;
+  position: absolute;
+}
+
+.izcamera-footer-editor-upside-select {
+  width: 100%;
+}

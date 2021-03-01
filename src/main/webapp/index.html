@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!-- inzi cameara 스타일 시트 -->
+<link rel="stylesheet" href="css/inzicamera/inzi.camera.css" type="text/css"/>
+
+<script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery-migrate-1.4.1.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery.form.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery.blockUI.js"></script>
+
+<!-- inzi camera 서드파트 자바 스크립트 -->
+<!-- <script src="js/jq/jquery-3.5.1.js"></script>  -->
+<script src="js/inzicamera/3rd-party/adapter.js"></script>
+<script src="js/inzicamera/3rd-party/screenfull.min.js"></script>
+<script src="js/inzicamera/3rd-party/filter.js"></script>
+<script src="js/inzicamera/3rd-party/glfx.js"></script>
+
+<!-- inzi camera 자바스크립트 -->
+<script src="js/inzicamera/inzi.camera.js"></script>
+
+<script src="js/inzicamera/inzi.camera.webrtc.js"></script>
+<script src="js/inzicamera/inzi.camera.input.js"></script>
+<script src="js/inzicamera/inzi.camera.preview.js"></script>
+<script src="js/inzicamera/inzi.camera.editor.js"></script>
+
+<script src="js/inzicamera/inzi.camera.util.common.js"></script>
+<script src="js/inzicamera/inzi.camera.util.image.js"></script>
+<script src="js/inzicamera/inzi.camera.util.image.converter.js"></script>
+<script src="js/inzicamera/inzi.camera.util.image.filter.js"></script>
+<body>
+    <div id="wrapper"  style="-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;">
+        <button onclick="takePhoto()">Fuck u</button>
+        <div id="inziCamera"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+
+        $("input[type=file]").click(function() {
+            $(this).val("");
+        });
+
+        $("input[type=file]").change(function() {
+            // from an input element
+            var filesToUpload = document.getElementById('file_upload').files;
+            var file = filesToUpload[0];
+        });
+
+        inzicamera.initModule( $('#inziCamera') );
+    });
+
+    function takePhoto() {
+        inzicamera.startTakingPhoto( successCallback, failedCallback );
+    }
+    function successCallback( image_data ) {
+        requestOcr( image_data );
+    }
+    function failedCallback( error ) {
+        alert( error );
+    }
+    function requestOcr( image_data ) {
+        alert(image_data);
+    }
+
+</script>
